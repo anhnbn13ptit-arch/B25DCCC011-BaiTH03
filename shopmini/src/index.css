@@ -1,0 +1,17 @@
+:root[data-theme='light'] { --bg:#fff; --text:#222; --card:#f5f5f5; }
+:root[data-theme='dark']  { --bg:#1b1b1f; --text:#eee; --card:#2a2a30; }
+body { background: var(--bg); color: var(--text); margin: 0; }
+
+.grid { display: grid; gap: 16px; grid-template-columns: 1fr; }            /* điện thoại: 1 cột */
+@media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }  /* tablet: 2 cột */
+@media (min-width: 1024px) { .grid { grid-template-columns: repeat(4, 1fr); } }  /* desktop: 4 cột */
+
+.card { background: var(--card); padding: 12px; border-radius: 8px; }
+.card img { width: 100%; height: 180px; object-fit: contain; }
+
+.cart-row { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--card); }
+.cart-info { flex: 1; }
+.cart-qty { display: flex; align-items: center; gap: 8px; }
+.detail { display: grid; gap: 24px; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .detail { grid-template-columns: 1fr 2fr; } }
+.detail-img { width: 100%; max-height: 360px; object-fit: contain; }
